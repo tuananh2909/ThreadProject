@@ -1,9 +1,11 @@
 package com.ntqsolution.utils;
 
+import com.ntqsolution.service.RunThread;
+
 public class ThreadUtil {
     public static void sleep(int millis) {
         try {
-            Thread.sleep(500);
+            Thread.sleep(millis);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -13,4 +15,8 @@ public class ThreadUtil {
         return min + (int) (Math.random() * ((max - min) + 1));
     }
 
+    public static void start() {
+        RunThread thread = new RunThread();
+        thread.start();
+    }
 }
